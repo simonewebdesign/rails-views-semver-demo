@@ -1,24 +1,15 @@
-# README
+# Semantically versioned Rails views
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Installation
 
-Things you may want to cover:
+This is a demo Rails app, so just run the usual Rails commands to get up and running.
 
-* Ruby version
+Clone the repo, then run `bundle` and `rails s` to start the server.
 
-* System dependencies
+## Explanation
 
-* Configuration
+Check app/views/welcome/index.html.erb — the code is commented.
 
-* Database creation
+Essentially we have a list of view partials under _app/views/components_ and we want to load the best available version, given a constraint such as `~> 1.1.2` (following the Gemfile notation).
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+If it exists, we render it, otherwise we rescue the exception and display an error on the page.
