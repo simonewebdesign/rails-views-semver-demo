@@ -1,4 +1,8 @@
 <h1>Welcome#index</h1>
 <p>Find me in app/views/welcome/index.html.erb</p>
 
-<%= render partial: 'components/foo-1.0.0' %>
+<% version = '1.0.1' %>
+
+<%= render partial: "components/foo-#{version}" %>
+
+<%= render partial: 'components/bar-1.0.0' %>
