@@ -1,7 +1,13 @@
 <h1>Welcome#index</h1>
 <p>Find me in app/views/welcome/index.html.erb</p>
 
-<% version = '1.0.1' %>
+
+<% available = %w(1.0.0 1.0.1 1.1.0 1.1.1 1.1.2 1.1.3 1.1.4 1.3.0 2.0.0 2.0.1) %>
+
+<% constraint = '~> 1.1.2' %>
+
+<!-- https://github.com/berkshelf/semverse/blob/dbc663db47793180f0a81c1ab47448ff5e6479f5/lib/semverse/constraint.rb#L37-L53 -->
+<% version = Semverse::Constraint.satisfy_best([constraint], available) %>
 
 <%= render partial: "components/foo-#{version}" %>
 
